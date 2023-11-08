@@ -30,9 +30,10 @@ ENV PETSC_DIR=/home/ubuntu/work/petsc
 ENV PETSC_ARCH=linux-opt
 ENV PETSC_PREFIX=/home/ubuntu/local/petsc
 
+ENV PATH=$PATH:/home/ubuntu/.local/bin
 RUN pip install numpy ipython
 RUN pip install 'cython<3'
-RUN pip install netcdf4 matplib
+RUN pip install netcdf4 matplotlib
 
 # Build PETSc from source
 RUN git clone -b release https://gitlab.com/petsc/petsc $PETSC_DIR
