@@ -51,6 +51,7 @@ RUN ./configure \
   --download-f2cblaslapack
 RUN make all
 RUN make install
+RUN make check
 ENV PYTHONPATH=$PYTHONPATH:$PETSC_PREFIX/lib/
 ENV PATH=$PETSC_DIR/$PETSC_ARCH/bin/:$PATH
 ENV OMPI_MCA_btl=^openib
