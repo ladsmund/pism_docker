@@ -1,0 +1,18 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  CONTAINER_IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:lastest
+    entrypoint: [""]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/thredds"
+      --dockerfile "${CI_PROJECT_DIR}/thredds/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:latest"
