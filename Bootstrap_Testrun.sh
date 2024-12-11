@@ -12,7 +12,7 @@ set -evxf
 #in order to make sure you are running on cores not currently in use.
 
 #PISM executable
-pismrun=/home/syhsv/Models/PISM/pism/bin/pismr
+pismrun=pismr
 
 #------------------------------------------------------------------------
 #Files and directories
